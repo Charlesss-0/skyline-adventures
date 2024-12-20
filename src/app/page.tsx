@@ -1,3 +1,11 @@
+import MainHeader from '@/components/main-header'
+import MainHero from '@/components/main-hero'
+
 export default function Home(): React.ReactNode {
-	return <h1>Hello, world!</h1>
+	return (
+		<>
+			<MainHeader />
+			<MainHero />
+		</>
+	)
 }
