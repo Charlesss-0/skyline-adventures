@@ -24,10 +24,10 @@ export default function MainHero(): React.ReactNode {
 					you.
 				</p>
 
-				<Button className="gap-4 px-8 py-3 text-xl w-max h-max">
+				<Button className="gap-4 px-8 py-3 text-xl w-max group" size="lg">
 					<span>Explore</span>
 
-					<ArrowRight className="w-6 h-6" />
+					<ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-all duration-300 ease-in-out" />
 				</Button>
 			</div>
 		</div>
