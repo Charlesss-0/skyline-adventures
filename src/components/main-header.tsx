@@ -1,15 +1,57 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
 import { Button } from './ui/button'
 import { CompassIcon } from 'lucide-react'
+import { cn } from '@/utils/tw-merge'
 
 export default function MainHeader(): React.ReactNode {
+	const [scrolled, setScrolled] = useState(false)
+
+	useEffect(() => {
+		const handleScroll = (): void => {
+			if (window.scrollY > 0) {
+				setScrolled(true)
+			} else {
+				setScrolled(false)
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll)
+
+		return (): void => window.removeEventListener('scroll', handleScroll)
+	}, [])
+
 	return (
-		<div className="fixed top-0 z-50 flex items-center justify-between w-full p-4 text-white">
-			<div className="flex items-center gap-2">
-				<CompassIcon className="text-blue-500 w-9 h-9" />
+		<div
+			className={cn(
+				'fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all duration-300 ease-in-out text-neutral-50 hover:bg-neutral-100/70 hover:backdrop-blur-md group',
+				scrolled && 'bg-neutral-100/70 backdrop-blur-md shadow-md'
+			)}
+		>
+			<div
+				className={cn(
+					'flex items-center gap-2 group-hover:text-blue-500',
+					scrolled && 'text-blue-500'
+				)}
+			>
+				<CompassIcon
+					className={cn(
+						'w-9 h-9 stroke-neutral-50 group-hover:stroke-blue-500',
+						scrolled && 'stroke-blue-500'
+					)}
+				/>
+
 				<span className="text-xl font-bold">Wanderlust</span>
 			</div>
 
-			<div className="flex items-center gap-2">
+			<div
+				className={cn(
+					'flex items-center gap-2 group-hover:text-neutral-900',
+					scrolled && 'text-neutral-900'
+				)}
+			>
 				<Button variant="ghost">Destinations</Button>
 
 				<Button variant="ghost">Features</Button>

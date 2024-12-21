@@ -16,10 +16,10 @@ export default function MainHero(): React.ReactNode {
 				/>
 			</div>
 
-			<div className="absolute flex flex-col gap-6 top-[50%] translate-y-[-50%] left-10 text-white max-w-[800px] w-full">
+			<div className="absolute flex flex-col gap-6 top-[50%] translate-y-[-50%] left-10 text-neutral-50 max-w-[800px] w-full">
 				<h1 className="text-6xl font-bold">Discover Your Next Adventure</h1>
 
-				<p className="text-2xl">
+				<p className="text-2xl text-neutral-200">
 					Experience unforgettable journeys with personalized travel experiences tailored just for
 					you.
 				</p>
