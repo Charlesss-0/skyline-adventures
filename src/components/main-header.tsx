@@ -11,12 +11,10 @@ export default function MainHeader(): React.ReactNode {
 
 	useEffect(() => {
 		const handleScroll = (): void => {
-			if (window.scrollY > 0) {
-				setScrolled(true)
-			} else {
-				setScrolled(false)
-			}
+			setScrolled(window.scrollY > 0)
 		}
+
+		handleScroll()
 
 		window.addEventListener('scroll', handleScroll)
 
