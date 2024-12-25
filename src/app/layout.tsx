@@ -5,8 +5,9 @@ import { geistMono, geistSans } from './fonts'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: 'Tourism Project',
-	description: 'A website for tourism projects',
+	title: 'Skyline Adventures',
+	description:
+		'Discover your next adventure with personalized travel experiences tailored just for you',
 }
 
 export default function RootLayout({
