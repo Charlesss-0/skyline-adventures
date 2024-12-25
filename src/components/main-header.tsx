@@ -41,7 +41,7 @@ export default function MainHeader(): React.ReactNode {
 					)}
 				/>
 
-				<span className="text-xl font-bold">Wanderlust</span>
+				<span className="text-xl font-bold">Skyline</span>
 			</div>
 
 			<div
