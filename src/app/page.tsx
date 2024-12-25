@@ -1,5 +1,6 @@
 import Destinations from '@/components/destinations'
 import Features from '@/components/features'
+import Footer from '@/components/footer'
 import MainHeader from '@/components/main-header'
 import MainHero from '@/components/main-hero'
 
@@ -10,6 +11,7 @@ export default function Home(): React.ReactNode {
 			<MainHero />
 			<Destinations />
 			<Features />
+			<Footer />
 		</>
 	)
 }

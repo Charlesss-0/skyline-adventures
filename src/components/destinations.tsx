@@ -45,7 +45,7 @@ export default function Destinations(): React.ReactNode {
 
 			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 				{DESTINATIONS.map(destination => (
-					<Card key={destination.title} className="overflow-hidden">
+					<Card key={destination.title} className="overflow-hidden bg-white">
 						<CardHeader className="overflow-hidden h-72 group">
 							<Image
 								src={destination.imageUrl}
