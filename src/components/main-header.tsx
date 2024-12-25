@@ -46,7 +46,7 @@ export default function MainHeader(): React.ReactNode {
 
 			<div
 				className={cn(
-					'flex items-center gap-2 group-hover:text-neutral-900',
+					'items-center gap-2 group-hover:text-neutral-900 hidden sm:flex',
 					scrolled && 'text-neutral-900'
 				)}
 			>
@@ -58,6 +58,8 @@ export default function MainHeader(): React.ReactNode {
 
 				<Button>Get Started</Button>
 			</div>
+
+			<Button className="sm:hidden">Get Started</Button>
 		</div>
 	)
 }

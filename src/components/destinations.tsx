@@ -36,11 +36,13 @@ const DESTINATIONS = [
 
 export default function Destinations(): React.ReactNode {
 	return (
-		<div className="py-20 px-14">
+		<div className="px-6 py-12 md:py-20 md:px-14">
 			<div className="mb-12 space-y-2 text-center">
-				<h2 className="text-4xl font-bold">Popular Destinations</h2>
+				<h2 className="text-2xl font-bold md:text-4xl">Popular Destinations</h2>
 
-				<p className="text-neutral-600">Explore our most sought-after destinations</p>
+				<p className="text-sm text-neutral-600 md:text-base">
+					Explore our most sought-after destinations
+				</p>
 			</div>
 
 			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

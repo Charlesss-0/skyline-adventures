@@ -28,15 +28,15 @@ export default function Features(): React.ReactNode {
 	return (
 		<div className="py-20 bg-white px-14">
 			<div className="max-w-3xl mx-auto mb-12 space-y-4 text-center">
-				<h2 className="text-4xl font-bold">Why Choose Us?</h2>
+				<h2 className="text-2xl font-bold md:text-4xl">Why Choose Us?</h2>
 
-				<p className="text-neutral-600">
+				<p className="text-sm text-neutral-600 md:text-base">
 					Experience travel planning and booking with ease. Our intuitive scheduling system and
 					user-friendly interface make it simple to plan your next adventure.
 				</p>
 			</div>
 
-			<div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+			<div className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-3 lg:grid-cols-4">
 				{features.map((feature, index) => (
 					<Card key={index} className="py-4 bg-transparent border-none shadow-none">
 						<CardHeader className="flex flex-col items-center gap-4 p-2 py-4">
