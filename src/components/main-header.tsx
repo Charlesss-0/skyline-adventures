@@ -54,7 +54,7 @@ export default function MainHeader(): React.ReactNode {
 					<a href="#destinations">Destinations</a>
 				</Button>
 
-				<Button variant="ghost">
+				<Button variant="ghost" asChild>
 					<a href="#features">Features</a>
 				</Button>
 

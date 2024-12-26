@@ -26,19 +26,19 @@ export default function Footer(): React.ReactNode {
 
 						<ul className="space-y-1 md:space-y-2">
 							<li>
-								<a href="#destinations" className="text-gray-400 hover:text-white">
+								<a href="#destinations" className="text-gray-400 hover:text-white cursor-pointer">
 									Destinations
 								</a>
 							</li>
 
 							<li>
-								<a href="#features" className="text-gray-400 hover:text-white">
+								<a href="#features" className="text-gray-400 hover:text-white cursor-pointer">
 									Features
 								</a>
 							</li>
 
 							<li>
-								<a href="/app" className="text-gray-400 hover:text-white">
+								<a href="/app" className="text-gray-400 hover:text-white cursor-pointer">
 									Get Started
 								</a>
 							</li>
