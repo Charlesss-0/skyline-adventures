@@ -32,20 +32,14 @@ export default function Footer(): React.ReactNode {
 							</li>
 
 							<li>
-								<a href="#experiences" className="text-gray-400 hover:text-white">
-									Experiences
-								</a>
-							</li>
-
-							<li>
-								<a href="#testimonials" className="text-gray-400 hover:text-white">
-									Testimonials
+								<a href="#features" className="text-gray-400 hover:text-white">
+									Features
 								</a>
 							</li>
 
 							<li>
 								<a href="/app" className="text-gray-400 hover:text-white">
-									Open App
+									Get Started
 								</a>
 							</li>
 						</ul>

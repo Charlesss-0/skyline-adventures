@@ -50,11 +50,13 @@ export default function MainHeader(): React.ReactNode {
 					scrolled && 'text-neutral-900'
 				)}
 			>
-				<Button variant="ghost">Destinations</Button>
+				<Button variant="ghost" asChild>
+					<a href="#destinations">Destinations</a>
+				</Button>
 
-				<Button variant="ghost">Features</Button>
-
-				<Button variant="ghost">Testimonials</Button>
+				<Button variant="ghost">
+					<a href="#features">Features</a>
+				</Button>
 
 				<Button>Get Started</Button>
 			</div>

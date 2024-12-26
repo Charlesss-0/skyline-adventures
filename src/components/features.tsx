@@ -26,7 +26,7 @@ const features = [
 
 export default function Features(): React.ReactNode {
 	return (
-		<div className="py-20 bg-white px-14">
+		<div id="features" className="py-20 bg-white px-14">
 			<div className="max-w-3xl mx-auto mb-12 space-y-4 text-center">
 				<h2 className="text-2xl font-bold md:text-4xl">Why Choose Us?</h2>
 
