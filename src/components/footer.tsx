@@ -17,7 +17,7 @@ export default function Footer(): React.ReactNode {
 						</div>
 
 						<p className="text-gray-400">
-							Your trusted partner in creating unforgettable travel experiences.
+							Your trusted partner in creating unforgettable touristic experiences.
 						</p>
 					</div>
 
