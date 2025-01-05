@@ -68,11 +68,12 @@ export default function MainHero(): React.ReactNode {
 					<div className="absolute inset-0 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50">
 						<Image
 							src={slides[current].image}
-							alt="a house with a thatched roof surrounded by greenery"
-							width={1000}
-							height={1000}
-							quality={80}
-							className="object-cover w-full h-full"
+							alt={slides[current].title}
+							fill={true}
+							quality={70}
+							priority={current === 0}
+							loading={current === 0 ? 'eager' : 'lazy'}
+							className="object-cover"
 						/>
 					</div>
 
