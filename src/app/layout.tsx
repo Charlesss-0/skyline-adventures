@@ -1,9 +1,8 @@
 import './globals.css'
 
-import { geistMono, geistSans, instrumentSans } from './fonts'
-
 import MainHeader from '@/components/main-header'
 import type { Metadata } from 'next'
+import { instrumentSans } from './fonts'
 
 export const metadata: Metadata = {
 	title: 'Skyline Adventures',
@@ -15,10 +14,7 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>): React.ReactNode {
 	return (
-		<html
-			lang="en"
-			className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} antialiased`}
-		>
+		<html lang="en" className={`${instrumentSans.variable} antialiased`}>
 			<body className="font-instrument-sans bg-gray-50 text-neutral-900">
 				<MainHeader />
 				{children}

@@ -19,7 +19,7 @@ const links = [
 		btnVariant: 'ghost',
 	},
 	{
-		name: 'About Us',
+		name: 'About',
 		href: '/about',
 		btnVariant: 'ghost',
 	},

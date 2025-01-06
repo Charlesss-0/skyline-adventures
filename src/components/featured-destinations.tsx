@@ -1,8 +1,11 @@
+'use client'
+
+import { ArrowRight, MapPin, Star } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
-import { MapPin, Star } from 'lucide-react'
 
 import { Button } from './ui/button'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const DESTINATIONS = [
 	{
@@ -35,6 +38,8 @@ const DESTINATIONS = [
 ] as const
 
 export default function FeaturedDestinations(): React.ReactNode {
+	const router = useRouter()
+
 	return (
 		<div id="destinations" className="px-6 py-12 md:py-20 md:px-14">
 			<div className="mb-12 space-y-2 text-center">
@@ -89,6 +94,18 @@ export default function FeaturedDestinations(): React.ReactNode {
 						</CardFooter>
 					</Card>
 				))}
+			</div>
+
+			<div className="mt-20 mb-9 md:mb-0 flex justify-center">
+				<Button
+					className="gap-2 px-6 py-2 group"
+					size="lg"
+					onClick={() => router.push('/destinations')}
+				>
+					<span className="font-medium text-lg">Explore</span>
+
+					<ArrowRight className="w-5 h-5 transition-all duration-300 ease-in-out md:w-6 md:h-6 group-hover:translate-x-1" />
+				</Button>
 			</div>
 		</div>
 	)
