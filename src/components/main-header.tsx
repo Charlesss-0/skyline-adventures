@@ -100,7 +100,8 @@ export default function MainHeader(): React.ReactNode {
 						className={cn(
 							getButtonClass(link.href, link.btnVariant),
 							pathname === link.href && 'underline underline-offset-2',
-							'hover:text-neutral-900 hover:underline underline-offset-2'
+							'hover:text-neutral-900 hover:underline underline-offset-2',
+							link.btnVariant === 'default' && 'hover:no-underline hover:text-inherit'
 						)}
 					>
 						{link.name}
