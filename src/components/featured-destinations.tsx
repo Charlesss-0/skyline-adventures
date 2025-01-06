@@ -34,7 +34,7 @@ const DESTINATIONS = [
 	},
 ] as const
 
-export default function Destinations(): React.ReactNode {
+export default function FeaturedDestinations(): React.ReactNode {
 	return (
 		<div id="destinations" className="px-6 py-12 md:py-20 md:px-14">
 			<div className="mb-12 space-y-2 text-center">

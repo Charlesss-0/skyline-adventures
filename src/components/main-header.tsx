@@ -1,13 +1,40 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { Button } from './ui/button'
 import { CompassIcon } from 'lucide-react'
 import { cn } from '@/utils/tw-merge'
 
+const links = [
+	{
+		name: 'Home',
+		href: '/',
+		btnVariant: 'ghost',
+	},
+	{
+		name: 'Destinations',
+		href: '/destinations',
+		btnVariant: 'ghost',
+	},
+	{
+		name: 'About Us',
+		href: '/about',
+		btnVariant: 'ghost',
+	},
+	{
+		name: 'Get Started',
+		href: '/destinations',
+		btnVariant: 'default',
+	},
+] as const
+
 export default function MainHeader(): React.ReactNode {
+	const router = useRouter()
+	const pathname = usePathname()
 	const [scrolled, setScrolled] = useState(false)
+	const [hovered, setHovered] = useState(false)
 
 	useEffect(() => {
 		const handleScroll = (): void => {
@@ -21,12 +48,32 @@ export default function MainHeader(): React.ReactNode {
 		return (): void => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
+	const getButtonClass = (linkHref: string, btnVariant: string): string => {
+		const isActive = pathname === linkHref
+
+		if (btnVariant === 'default') {
+			return 'text-neutral-50'
+		}
+
+		if (scrolled) {
+			return isActive ? 'text-neutral-900' : 'text-neutral-600'
+		}
+
+		if (hovered) {
+			return isActive ? 'text-neutral-900' : 'text-neutral-600'
+		}
+
+		return isActive ? 'text-neutral-50' : 'text-neutral-300'
+	}
+
 	return (
 		<div
 			className={cn(
 				'fixed top-0 z-50 flex items-center justify-between w-full p-4 transition-all duration-300 ease-in-out text-neutral-50 hover:bg-neutral-100/70 hover:backdrop-blur-md group',
 				scrolled && 'bg-neutral-100/70 backdrop-blur-md shadow-md'
 			)}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}
 		>
 			<div
 				className={cn(
@@ -41,27 +88,29 @@ export default function MainHeader(): React.ReactNode {
 					)}
 				/>
 
-				<span className="text-xl font-bold">Skyline</span>
+				<span className="text-xl font-bold tracking-wide">SKYLINE</span>
 			</div>
 
-			<div
-				className={cn(
-					'items-center gap-2 group-hover:text-neutral-900 hidden sm:flex',
-					scrolled && 'text-neutral-900'
-				)}
-			>
-				<Button variant="ghost" asChild>
-					<a href="#destinations">Destinations</a>
-				</Button>
-
-				<Button variant="ghost" asChild>
-					<a href="#features">Features</a>
-				</Button>
-
-				<Button>Get Started</Button>
+			<div className="items-center gap-2  hidden sm:flex tracking-wider">
+				{links.map((link, index) => (
+					<Button
+						key={index}
+						variant={link.btnVariant}
+						onClick={() => router.push(link.href)}
+						className={cn(
+							getButtonClass(link.href, link.btnVariant),
+							pathname === link.href && 'underline underline-offset-2',
+							'hover:text-neutral-900 hover:underline underline-offset-2'
+						)}
+					>
+						{link.name}
+					</Button>
+				))}
 			</div>
 
-			<Button className="sm:hidden">Get Started</Button>
+			<Button className="sm:hidden" onClick={() => router.push('/destinations')}>
+				Get Started
+			</Button>
 		</div>
 	)
 }

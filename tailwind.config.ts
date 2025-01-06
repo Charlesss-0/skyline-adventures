@@ -10,8 +10,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['--font-geist-sans', 'sans-serif'],
-				mono: ['--font-geist-mono', 'monospace'],
+				'geist-sans': ['--font-geist-sans', 'sans-serif'],
+				'geist-mono': ['--font-geist-mono', 'monospace'],
+				'instrument-sans': ['--font-instrument-sans', 'sans-serif'],
 			},
 		},
 	},

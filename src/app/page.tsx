@@ -1,15 +1,13 @@
-import Destinations from '@/components/destinations'
+import FeaturedDestinations from '@/components/featured-destinations'
 import Features from '@/components/features'
 import Footer from '@/components/footer'
-import MainHeader from '@/components/main-header'
 import MainHero from '@/components/main-hero'
 
 export default function Home(): React.ReactNode {
 	return (
 		<>
-			<MainHeader />
 			<MainHero />
-			<Destinations />
+			<FeaturedDestinations />
 			<Features />
 			<Footer />
 		</>

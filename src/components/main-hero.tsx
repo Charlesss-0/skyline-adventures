@@ -7,35 +7,37 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import { cn } from '@/utils/tw-merge'
+import { useRouter } from 'next/navigation'
 
 const slides = [
 	{
 		image: '/asset-1.jpg',
-		title: 'Explore hidden wonders',
+		title: 'Explore Hidden Wonders',
 		description: "Venture into breathtaking canyons and discover nature's most spectacular views",
-		cta: 'Book Now',
+		cta: 'Find Natural Wonders',
 	},
 	{
 		image: '/asset-2.jpg',
-		title: 'Journey through paradise ',
+		title: 'Journey Through Paradise',
 		description: 'Experience the freedom of scenic routes and peaceful countryside escapes',
-		cta: 'Book Now',
+		cta: 'Plan Your Route',
 	},
 	{
 		image: '/asset-3.jpg',
-		title: 'Discover Adventure Together ',
+		title: 'Discover Adventure Together',
 		description: 'Join guided group hikes and create unforgettable memories with your friends',
-		cta: 'Book Now',
+		cta: 'Join a Group Tour',
 	},
 	{
 		image: '/asset-4.jpeg',
 		title: 'Stay in Eco Paradise',
 		description: 'Experience authentic accommodations that blend seamlessly with nature',
-		cta: 'Book Now',
+		cta: 'Book Eco Lodges',
 	},
 ] as const
 
 export default function MainHero(): React.ReactNode {
+	const router = useRouter()
 	const [current, setCurrent] = useState(0)
 	const [autoPlay, setAutoPlay] = useState(true)
 
@@ -43,12 +45,12 @@ export default function MainHero(): React.ReactNode {
 		if (!autoPlay) {
 			setTimeout(() => {
 				setAutoPlay(true)
-			}, 5000)
+			}, 6000)
 		}
 
 		const slideShowTimer = setInterval(() => {
 			setCurrent(current => (current === slides.length - 1 ? 0 : current + 1))
-		}, 5000)
+		}, 6000)
 
 		return (): void => {
 			clearInterval(slideShowTimer)
@@ -101,7 +103,11 @@ export default function MainHero(): React.ReactNode {
 							animate={{ y: 0, opacity: 1 }}
 							transition={{ delay: 0.6 }}
 						>
-							<Button className="gap-2 px-6 py-3 lg:px-8 md:gap-4 w-max group" size="lg">
+							<Button
+								className="gap-2 px-6 py-3 lg:px-8 md:gap-4 w-max group"
+								size="lg"
+								onClick={() => router.push('/destinations')}
+							>
 								<span className="text-lg md:text-xl">{slides[current].cta}</span>
 
 								<ArrowRight className="w-5 h-5 transition-all duration-300 ease-in-out md:w-6 md:h-6 group-hover:translate-x-1" />
