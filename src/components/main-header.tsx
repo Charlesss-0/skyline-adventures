@@ -52,7 +52,7 @@ export default function MainHeader(): React.ReactNode {
 		const isActive = pathname === linkHref
 
 		if (btnVariant === 'default') {
-			return 'text-neutral-50'
+			return 'text-neutral-50 no-underline'
 		}
 
 		if (scrolled) {
@@ -99,7 +99,9 @@ export default function MainHeader(): React.ReactNode {
 						onClick={() => router.push(link.href)}
 						className={cn(
 							getButtonClass(link.href, link.btnVariant),
-							pathname === link.href && 'underline underline-offset-2',
+							pathname === link.href &&
+								link.btnVariant !== 'default' &&
+								'underline underline-offset-2',
 							'hover:text-neutral-900 hover:underline underline-offset-2',
 							link.btnVariant === 'default' && 'hover:no-underline hover:text-inherit'
 						)}
