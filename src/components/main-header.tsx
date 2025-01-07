@@ -23,11 +23,6 @@ const links = [
 		href: '/about',
 		btnVariant: 'ghost',
 	},
-	{
-		name: 'Get Started',
-		href: '/destinations',
-		btnVariant: 'default',
-	},
 ] as const
 
 export default function MainHeader(): React.ReactNode {
@@ -99,11 +94,8 @@ export default function MainHeader(): React.ReactNode {
 						onClick={() => router.push(link.href)}
 						className={cn(
 							getButtonClass(link.href, link.btnVariant),
-							pathname === link.href &&
-								link.btnVariant !== 'default' &&
-								'underline underline-offset-2',
-							'hover:text-neutral-900 hover:underline underline-offset-2',
-							link.btnVariant === 'default' && 'hover:no-underline hover:text-inherit'
+							pathname === link.href && 'underline underline-offset-2',
+							'hover:text-neutral-900 hover:underline underline-offset-2'
 						)}
 					>
 						{link.name}
