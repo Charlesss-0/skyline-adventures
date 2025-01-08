@@ -35,7 +35,7 @@ export default function TripCard(props: TripProps): React.ReactNode {
 				/>
 
 				<div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-					<h3 className="text-2xl items-center gap-4 mb-3">{title}</h3>
+					<h3 className="text-2xl items-center gap-4 mb-3 font-semibold tracking-wider">{title}</h3>
 
 					<div className="flex items-center gap-4 mb-3">
 						<div className="flex items-center gap-1">
@@ -60,7 +60,7 @@ export default function TripCard(props: TripProps): React.ReactNode {
 
 						<Button className="px-4 py-2 rounded-lg font-semibold gap-2 mt-4">
 							<Calendar className="w-4 h-4" />
-							View Details
+							<span className="tracking-wide">View Details</span>
 						</Button>
 					</div>
 				</div>
