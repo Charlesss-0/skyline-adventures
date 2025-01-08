@@ -1,5 +1,6 @@
 import './globals.css'
 
+import Footer from '@/components/footer'
 import MainHeader from '@/components/main-header'
 import type { Metadata } from 'next'
 import { instrumentSans } from './fonts'
@@ -18,6 +19,7 @@ export default function RootLayout({
 			<body className="font-instrument-sans bg-gray-50 text-neutral-900">
 				<MainHeader />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
