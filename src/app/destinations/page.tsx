@@ -7,7 +7,7 @@ import { trips } from '@/data/trips'
 
 export default function Destinations(): React.ReactNode {
 	return (
-		<div className="bg-slate-400 pt-20 text-neutral-50">
+		<div className="bg-gray-800 pt-20 text-neutral-50">
 			<AnimatePresence mode="wait">
 				<motion.div
 					initial={{ opacity: 0 }}

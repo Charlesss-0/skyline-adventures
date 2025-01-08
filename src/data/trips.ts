@@ -80,7 +80,7 @@ export const trips = [
 		location: 'Croatia',
 		duration: '7 days',
 		price: 2399,
-		image: 'https://images.unsplash.com/photo-1555990538-17e8162b3f93?w=800&q=80&auto=format',
+		image: 'https://images.unsplash.com/photo-1656881225364-04a2bd84a9b0?w=800&q=80&auto=format',
 	},
 	{
 		id: '11',
@@ -88,14 +88,6 @@ export const trips = [
 		location: 'Thailand',
 		duration: '10 days',
 		price: 1999,
-		image: 'https://images.unsplash.com/photo-1490077476659-095159692ab5?w=800&q=80&auto=format',
-	},
-	{
-		id: '12',
-		title: 'Inca Trail Trek',
-		location: 'Peru',
-		duration: '5 days',
-		price: 1599,
 		image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80&auto=format',
 	},
 ] as const
