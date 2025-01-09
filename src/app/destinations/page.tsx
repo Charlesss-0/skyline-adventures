@@ -14,7 +14,7 @@ export default function Destinations(): React.ReactNode {
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 					transition={{ duration: 1 }}
-					className="h-full px-10 pb-10"
+					className="h-full px-2 md:px-10 pb-10"
 				>
 					<div className="w-full text-center space-y-4 mb-20">
 						<motion.h1
