@@ -10,7 +10,7 @@ interface TripProps {
 	duration: string
 	price: number
 	image: string
-	featured?: boolean
+	featured: boolean
 }
 
 export default function TripCard(props: TripProps): React.ReactNode {
@@ -18,7 +18,7 @@ export default function TripCard(props: TripProps): React.ReactNode {
 
 	return (
 		<div
-			className={`relative group overflow-hidden rounded-xl transition-all duration-300 cursor-pointer ${
+			className={`relative group overflow-hidden rounded-xl transition-all duration-300 cursor-pointer text-neutral-50 ${
 				featured ? 'md:col-span-2 md:row-span-2' : ''
 			}`}
 		>

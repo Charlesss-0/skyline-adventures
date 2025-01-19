@@ -15,6 +15,7 @@ export const trips = [
 		duration: '10 days',
 		price: 3299,
 		image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80&auto=format',
+		featured: false,
 	},
 	{
 		id: '3',
@@ -23,6 +24,7 @@ export const trips = [
 		duration: '5 days',
 		price: 1999,
 		image: 'https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800&q=80&auto=format',
+		featured: false,
 	},
 	{
 		id: '4',
@@ -31,7 +33,7 @@ export const trips = [
 		duration: '8 days',
 		price: 4299,
 		image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&q=80&auto=format',
-		featured: true,
+		featured: false,
 	},
 	{
 		id: '5',
@@ -40,6 +42,7 @@ export const trips = [
 		duration: '12 days',
 		price: 2899,
 		image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80&auto=format',
+		featured: false,
 	},
 	{
 		id: '6',
@@ -48,6 +51,7 @@ export const trips = [
 		duration: '9 days',
 		price: 1799,
 		image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80&auto=format',
+		featured: true,
 	},
 	{
 		id: '7',
@@ -56,6 +60,7 @@ export const trips = [
 		duration: '6 days',
 		price: 2199,
 		image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80&auto=format',
+		featured: false,
 	},
 	{
 		id: '8',
@@ -64,6 +69,7 @@ export const trips = [
 		duration: '8 days',
 		price: 1899,
 		image: 'https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800&q=80&auto=format',
+		featured: false,
 	},
 	{
 		id: '9',
@@ -81,6 +87,7 @@ export const trips = [
 		duration: '7 days',
 		price: 2399,
 		image: 'https://images.unsplash.com/photo-1656881225364-04a2bd84a9b0?w=800&q=80&auto=format',
+		featured: true,
 	},
 	{
 		id: '11',
@@ -89,5 +96,15 @@ export const trips = [
 		duration: '10 days',
 		price: 1999,
 		image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80&auto=format',
+		featured: false,
+	},
+	{
+		id: '12',
+		title: 'Safari Adventure in Kenya',
+		location: 'Kenya',
+		duration: '12 days',
+		price: '3299',
+		image: 'https://images.unsplash.com/photo-1681166483273-110dcfa6ed08?w=800&q=80&auto=format',
+		featured: false,
 	},
 ] as const
