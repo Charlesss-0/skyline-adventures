@@ -2,6 +2,8 @@ import { Calendar, Clock, DollarSign, MapPin } from 'lucide-react'
 
 import { Button } from './ui/button'
 import Image from 'next/image'
+import TripDetails from './trip-details'
+import { useState } from 'react'
 
 interface TripProps {
 	id: string
@@ -15,56 +17,66 @@ interface TripProps {
 
 export default function TripCard(props: TripProps): React.ReactNode {
 	const { title, location, duration, price, image, featured } = props
+	const [isModalActive, setIsModalActive] = useState(false)
 
 	return (
-		<div
-			className={`relative group overflow-hidden rounded-xl transition-all duration-300 cursor-pointer text-neutral-50 ${
-				featured ? 'md:col-span-2 md:row-span-2' : ''
-			}`}
-		>
-			<div>
-				<div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 z-10" />
+		<>
+			<div
+				className={`relative group overflow-hidden rounded-xl transition-all duration-300 cursor-pointer text-neutral-50 ${
+					featured ? 'md:col-span-2 md:row-span-2' : ''
+				}`}
+			>
+				<div>
+					<div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 z-10" />
 
-				<Image
-					src={image}
-					alt={title}
-					fill={true}
-					quality={70}
-					loading="lazy"
-					className="object-cover group-hover:scale-110 transition-transform duration-300"
-				/>
+					<Image
+						src={image}
+						alt={title}
+						fill={true}
+						quality={70}
+						loading="lazy"
+						className="object-cover group-hover:scale-110 transition-transform duration-300"
+					/>
 
-				<div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-					<h3 className="text-2xl items-center gap-4 mb-3 font-semibold tracking-wider">{title}</h3>
+					<div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+						<h3 className="text-2xl items-center gap-4 mb-3 font-semibold tracking-wider">
+							{title}
+						</h3>
 
-					<div className="flex items-center gap-4 mb-3">
-						<div className="flex items-center gap-1">
-							<MapPin className="w-4 h-4" />
+						<div className="flex items-center gap-4 mb-3">
+							<div className="flex items-center gap-1">
+								<MapPin className="w-4 h-4" />
 
-							<span className="text-sm">{location}</span>
+								<span className="text-sm">{location}</span>
+							</div>
+
+							<div className="flex items-center gap-1">
+								<Clock className="w-4 h-4" />
+
+								<span className="text-sm">{duration}</span>
+							</div>
 						</div>
 
-						<div className="flex items-center gap-1">
-							<Clock className="w-4 h-4" />
+						<div>
+							<div className="flex items-center gap-1">
+								<DollarSign className="w-4 h-4" />
 
-							<span className="text-sm">{duration}</span>
+								<span className="text-xl font-bold">{price.toLocaleString()}</span>
+							</div>
+
+							<Button
+								className="px-4 py-2 rounded-lg font-semibold gap-2 mt-4"
+								onClick={() => setIsModalActive(!isModalActive)}
+							>
+								<Calendar className="w-4 h-4" />
+								<span className="tracking-wide">View Details</span>
+							</Button>
 						</div>
-					</div>
-
-					<div>
-						<div className="flex items-center gap-1">
-							<DollarSign className="w-4 h-4" />
-
-							<span className="text-xl font-bold">{price.toLocaleString()}</span>
-						</div>
-
-						<Button className="px-4 py-2 rounded-lg font-semibold gap-2 mt-4">
-							<Calendar className="w-4 h-4" />
-							<span className="tracking-wide">View Details</span>
-						</Button>
 					</div>
 				</div>
 			</div>
-		</div>
+
+			{isModalActive && <TripDetails {...props} />}
+		</>
 	)
 }

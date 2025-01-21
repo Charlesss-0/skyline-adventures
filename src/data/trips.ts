@@ -103,7 +103,7 @@ export const trips = [
 		title: 'Safari Adventure in Kenya',
 		location: 'Kenya',
 		duration: '12 days',
-		price: '3299',
+		price: 3299,
 		image: 'https://images.unsplash.com/photo-1681166483273-110dcfa6ed08?w=800&q=80&auto=format',
 		featured: false,
 	},
