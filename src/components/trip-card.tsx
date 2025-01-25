@@ -17,7 +17,7 @@ interface TripProps {
 
 export default function TripCard(props: TripProps): React.ReactNode {
 	const { title, location, duration, price, image, featured } = props
-	const [isModalActive, setIsModalActive] = useState(false)
+	const [showDetails, setShowDetails] = useState<boolean>(false)
 
 	return (
 		<>
@@ -66,7 +66,7 @@ export default function TripCard(props: TripProps): React.ReactNode {
 
 							<Button
 								className="px-4 py-2 rounded-lg font-semibold gap-2 mt-4"
-								onClick={() => setIsModalActive(!isModalActive)}
+								onClick={() => setShowDetails(true)}
 							>
 								<Calendar className="w-4 h-4" />
 								<span className="tracking-wide">View Details</span>
@@ -76,7 +76,7 @@ export default function TripCard(props: TripProps): React.ReactNode {
 				</div>
 			</div>
 
-			{isModalActive && <TripDetails {...props} />}
+			{showDetails && <TripDetails trip={props} onClose={() => setShowDetails(false)} />}
 		</>
 	)
 }
