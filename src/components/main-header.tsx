@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import { Button } from './ui/button'
 import { CompassIcon } from 'lucide-react'
+import Link from 'next/link'
 import { cn } from '@/utils/tw-merge'
 
 const links = [
@@ -70,9 +71,10 @@ export default function MainHeader(): React.ReactNode {
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
 		>
-			<div
+			<Link
+				href="/"
 				className={cn(
-					'flex items-center gap-2 group-hover:text-blue-500',
+					'flex items-center gap-2 group-hover:text-blue-500 cursor-pointer',
 					scrolled && 'text-blue-500'
 				)}
 			>
@@ -83,10 +85,10 @@ export default function MainHeader(): React.ReactNode {
 					)}
 				/>
 
-				<span className="text-xl font-bold tracking-wide">SKYLINE</span>
-			</div>
+				<span className="text-3xl font-bold tracking-wide font-nuchileda">SKYLINE</span>
+			</Link>
 
-			<div className="items-center gap-2  hidden sm:flex tracking-wider">
+			<div className="items-center hidden gap-2 tracking-wider sm:flex">
 				{links.map((link, index) => (
 					<Button
 						key={index}

@@ -84,7 +84,7 @@ export default function MainHero(): React.ReactNode {
 							initial={{ y: 20, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							transition={{ delay: 0.2 }}
-							className="text-3xl font-bold md:text-4xl lg:text-6xl"
+							className="mb-5 text-3xl font-bold md:text-4xl lg:text-6xl font-nuchileda"
 						>
 							{slides[current].title}
 						</motion.h1>
@@ -117,7 +117,7 @@ export default function MainHero(): React.ReactNode {
 				</motion.div>
 			</AnimatePresence>
 
-			<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+			<div className="absolute flex gap-2 -translate-x-1/2 bottom-4 left-1/2">
 				{slides.map((_, index) => (
 					<Button
 						key={index}

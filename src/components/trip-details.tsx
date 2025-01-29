@@ -71,32 +71,44 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 					<div className="grid md:grid-cols-2 gap-8 mb-8">
 						<div>
 							<h2 className="text-xl font-semibold mb-4">Trip Highlights</h2>
+
 							<div className="space-y-4">
 								<div className="flex items-start gap-3">
 									<Hotel className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Luxury Accommodations</p>
+
 										<p className="text-gray-600">Stay in carefully selected 4-5 star hotels</p>
 									</div>
 								</div>
+
 								<div className="flex items-start gap-3">
 									<Utensils className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Culinary Experiences</p>
+
 										<p className="text-gray-600">Authentic local cuisine and fine dining</p>
 									</div>
 								</div>
+
 								<div className="flex items-start gap-3">
 									<Users className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Small Groups</p>
+
 										<p className="text-gray-600">Maximum 12 travelers per group</p>
 									</div>
 								</div>
+
 								<div className="flex items-start gap-3">
 									<Car className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Private Transportation</p>
+
 										<p className="text-gray-600">Comfortable and convenient transfers</p>
 									</div>
 								</div>
@@ -105,25 +117,34 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 
 						<div>
 							<h2 className="text-xl font-semibold mb-4">Important Information</h2>
+
 							<div className="space-y-4">
 								<div className="flex items-start gap-3">
 									<Info className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Physical Level</p>
+
 										<p className="text-gray-600">Moderate - Some walking and hiking involved</p>
 									</div>
 								</div>
+
 								<div className="flex items-start gap-3">
 									<Users className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Group Size</p>
+
 										<p className="text-gray-600">2-12 people</p>
 									</div>
 								</div>
+
 								<div className="flex items-start gap-3">
 									<Calendar className="w-5 h-5 text-gray-600 mt-1" />
+
 									<div>
 										<p className="font-medium">Best Time to Visit</p>
+
 										<p className="text-gray-600">March to November</p>
 									</div>
 								</div>

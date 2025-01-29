@@ -11,6 +11,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'instrument-sans': ['var(--font-instrument-sans)', 'sans-serif'],
+				nuchileda: ['var(--font-nuchileda)', 'sans-serif'],
 			},
 		},
 	},
