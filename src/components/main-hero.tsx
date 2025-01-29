@@ -57,74 +57,81 @@ export default function MainHero(): React.ReactNode {
 		}
 	}, [autoPlay])
 
+	const handleChangeSlide = (index: number): void => {
+		setAutoPlay(false)
+		setCurrent(index)
+	}
+
 	return (
 		<div className="relative w-full h-screen overflow-hidden">
 			<AnimatePresence mode="wait">
-				<motion.div
-					key={current}
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 0.5 }}
-				>
-					<div className="absolute inset-0 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50">
-						<Image
-							src={slides[current].image}
-							alt={slides[current].title}
-							fill={true}
-							quality={70}
-							priority={current === 0}
-							loading={current === 0 ? 'eager' : 'lazy'}
-							className="object-cover"
-						/>
-					</div>
+				<div className="flex w-full h-full">
+					<motion.div
+						className="flex w-full h-full"
+						initial={{ x: `-${100 * current}%` }}
+						animate={{ x: `-${100 * current}%` }}
+						transition={{ duration: 0.8, ease: 'easeInOut' }}
+					>
+						{slides.map((slide, index) => (
+							<div key={index} className="relative flex-shrink-0 w-full h-full">
+								<div className="absolute inset-0 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50">
+									<Image
+										src={slide.image}
+										alt={slide.title}
+										fill={true}
+										quality={70}
+										priority={index === 0}
+										loading={index === 0 ? 'eager' : 'lazy'}
+										className="object-cover"
+									/>
+								</div>
 
-					<div className="absolute flex flex-col gap-6 top-[50%] translate-y-[-50%] left-4 right-4 md:left-8 lg:left-12 text-neutral-50 lg:max-w-[800px] lg:w-full">
-						<motion.h1
-							initial={{ y: 20, opacity: 0 }}
-							animate={{ y: 0, opacity: 1 }}
-							transition={{ delay: 0.2 }}
-							className="mb-5 text-3xl font-bold md:text-4xl lg:text-6xl font-nuchileda"
-						>
-							{slides[current].title}
-						</motion.h1>
+								<div className="absolute flex flex-col gap-6 top-[50%] translate-y-[-50%] left-4 right-4 md:left-8 lg:left-12 text-neutral-50 lg:max-w-[800px] lg:w-full">
+									<motion.h1
+										initial={{ y: 20, opacity: 0 }}
+										animate={{ y: 0, opacity: 1 }}
+										transition={{ delay: 0.2 }}
+										className="mb-5 text-3xl font-bold md:text-4xl lg:text-6xl font-nuchileda"
+									>
+										{slide.title}
+									</motion.h1>
 
-						<motion.p
-							initial={{ y: 20, opacity: 0 }}
-							animate={{ y: 0, opacity: 1 }}
-							transition={{ delay: 0.4 }}
-							className="text-lg text-neutral-200 lg:text-xl"
-						>
-							{slides[current].description}
-						</motion.p>
+									<motion.p
+										initial={{ y: 20, opacity: 0 }}
+										animate={{ y: 0, opacity: 1 }}
+										transition={{ delay: 0.4 }}
+										className="text-lg text-neutral-200 lg:text-xl"
+									>
+										{slide.description}
+									</motion.p>
 
-						<motion.div
-							initial={{ y: 20, opacity: 0 }}
-							animate={{ y: 0, opacity: 1 }}
-							transition={{ delay: 0.6 }}
-						>
-							<Button
-								className="gap-2 px-6 py-3 lg:px-8 md:gap-4 w-max group"
-								size="lg"
-								onClick={() => router.push('/destinations')}
-							>
-								<span className="text-lg md:text-xl">{slides[current].cta}</span>
+									<motion.div
+										initial={{ y: 20, opacity: 0 }}
+										animate={{ y: 0, opacity: 1 }}
+										transition={{ delay: 0.6 }}
+									>
+										<Button
+											className="gap-2 px-6 py-3 lg:px-8 md:gap-4 w-max group"
+											size="lg"
+											onClick={() => router.push('/destinations')}
+										>
+											<span className="text-lg md:text-xl">{slide.cta}</span>
 
-								<ArrowRight className="w-5 h-5 transition-all duration-300 ease-in-out md:w-6 md:h-6 group-hover:translate-x-1" />
-							</Button>
-						</motion.div>
-					</div>
-				</motion.div>
+											<ArrowRight className="w-5 h-5 transition-all duration-300 ease-in-out md:w-6 md:h-6 group-hover:translate-x-1" />
+										</Button>
+									</motion.div>
+								</div>
+							</div>
+						))}
+					</motion.div>
+				</div>
 			</AnimatePresence>
 
 			<div className="absolute flex gap-2 -translate-x-1/2 bottom-4 left-1/2">
 				{slides.map((_, index) => (
 					<Button
 						key={index}
-						onClick={() => {
-							setAutoPlay(false)
-							setCurrent(index)
-						}}
+						onClick={() => handleChangeSlide(index)}
 						variant="ghost"
 						size="icon"
 						className={cn('w-2 h-2 rounded-full', index === current ? 'bg-white' : 'bg-white/50')}
