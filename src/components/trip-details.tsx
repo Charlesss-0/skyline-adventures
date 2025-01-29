@@ -20,7 +20,7 @@ interface TripDetailsProps {
 export default function TripDetails({ trip, onClose }: TripDetailsProps): React.ReactNode {
 	return (
 		<div className="fixed inset-0 z-50 bg-black/50">
-			<Card className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full max-h-[90vh] bg-white overflow-auto border-none rounded-2xl">
+			<Card className="h-screen fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full max-w-4xl md:h-full md:max-h-[90vh] bg-white overflow-auto border-none md:rounded-2xl">
 				<CardHeader className="flex-row justify-between p-4 overflow-hidden h-[50vh]">
 					<Image
 						src={trip.image}
@@ -68,13 +68,13 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 					</div>
 
 					{/* Trip Details */}
-					<div className="grid md:grid-cols-2 gap-8 mb-8">
+					<div className="grid gap-8 mb-8 md:grid-cols-2">
 						<div>
-							<h2 className="text-xl font-semibold mb-4">Trip Highlights</h2>
+							<h2 className="mb-4 text-xl font-semibold">Trip Highlights</h2>
 
 							<div className="space-y-4">
 								<div className="flex items-start gap-3">
-									<Hotel className="w-5 h-5 text-gray-600 mt-1" />
+									<Hotel className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Luxury Accommodations</p>
@@ -84,7 +84,7 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 								</div>
 
 								<div className="flex items-start gap-3">
-									<Utensils className="w-5 h-5 text-gray-600 mt-1" />
+									<Utensils className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Culinary Experiences</p>
@@ -94,7 +94,7 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 								</div>
 
 								<div className="flex items-start gap-3">
-									<Users className="w-5 h-5 text-gray-600 mt-1" />
+									<Users className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Small Groups</p>
@@ -104,7 +104,7 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 								</div>
 
 								<div className="flex items-start gap-3">
-									<Car className="w-5 h-5 text-gray-600 mt-1" />
+									<Car className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Private Transportation</p>
@@ -116,11 +116,11 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 						</div>
 
 						<div>
-							<h2 className="text-xl font-semibold mb-4">Important Information</h2>
+							<h2 className="mb-4 text-xl font-semibold">Important Information</h2>
 
 							<div className="space-y-4">
 								<div className="flex items-start gap-3">
-									<Info className="w-5 h-5 text-gray-600 mt-1" />
+									<Info className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Physical Level</p>
@@ -130,7 +130,7 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 								</div>
 
 								<div className="flex items-start gap-3">
-									<Users className="w-5 h-5 text-gray-600 mt-1" />
+									<Users className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Group Size</p>
@@ -140,7 +140,7 @@ export default function TripDetails({ trip, onClose }: TripDetailsProps): React.
 								</div>
 
 								<div className="flex items-start gap-3">
-									<Calendar className="w-5 h-5 text-gray-600 mt-1" />
+									<Calendar className="w-5 h-5 mt-1 text-gray-600" />
 
 									<div>
 										<p className="font-medium">Best Time to Visit</p>

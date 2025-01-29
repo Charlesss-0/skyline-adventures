@@ -91,7 +91,7 @@ export default function MainHero(): React.ReactNode {
 										initial={{ y: 20, opacity: 0 }}
 										animate={{ y: 0, opacity: 1 }}
 										transition={{ delay: 0.2 }}
-										className="mb-5 text-3xl font-bold md:text-4xl lg:text-6xl font-nuchileda"
+										className="mb-5 text-4xl font-bold lg:text-6xl font-nuchileda"
 									>
 										{slide.title}
 									</motion.h1>

@@ -12,14 +12,14 @@ export default function FeaturedDestinations(): React.ReactNode {
 	return (
 		<div id="destinations" className="px-6 py-12 md:py-20 md:px-14">
 			<div className="mb-12 space-y-2 text-center">
-				<h2 className="text-2xl font-bold md:text-5xl font-nuchileda">Popular Destinations</h2>
+				<h2 className="text-3xl font-bold md:text-5xl font-nuchileda">Popular Destinations</h2>
 
 				<p className="text-sm text-neutral-600 md:text-base">
 					Explore our most sought-after destinations
 				</p>
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 auto-rows-[200px]">
+			<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 auto-rows-[300px]">
 				{trips.map(trip => trip.featured && <TripCard key={trip.id} {...trip} />)}
 			</div>
 
