@@ -13,7 +13,7 @@ export default function Footer(): React.ReactNode {
 						<div className="flex items-center mb-2 md:mb-4">
 							<Compass className="w-8 h-8 stroke-blue-500" />
 
-							<span className="ml-2 text-xl font-bold text-blue-500">Skyline</span>
+							<span className="ml-2 text-3xl font-bold text-blue-500 font-nuchileda">Skyline</span>
 						</div>
 
 						<p className="text-gray-400">
@@ -26,19 +26,19 @@ export default function Footer(): React.ReactNode {
 
 						<ul className="space-y-1 md:space-y-2">
 							<li>
-								<a href="#destinations" className="text-gray-400 hover:text-white cursor-pointer">
+								<a href="#destinations" className="text-gray-400 cursor-pointer hover:text-white">
 									Destinations
 								</a>
 							</li>
 
 							<li>
-								<a href="#features" className="text-gray-400 hover:text-white cursor-pointer">
+								<a href="#features" className="text-gray-400 cursor-pointer hover:text-white">
 									Features
 								</a>
 							</li>
 
 							<li>
-								<a href="/app" className="text-gray-400 hover:text-white cursor-pointer">
+								<a href="/app" className="text-gray-400 cursor-pointer hover:text-white">
 									Get Started
 								</a>
 							</li>
