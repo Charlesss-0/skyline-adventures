@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { Button } from './ui/button'
-import Link from 'next/link'
 import { cn } from '@/utils/tw-merge'
 
 const links = [
@@ -74,22 +73,23 @@ export default function MainHeader(): React.ReactNode {
 				onMouseEnter={() => setHovered(true)}
 				onMouseLeave={() => setHovered(false)}
 			>
-				<Link
-					href="/"
+				<Button
 					className={cn(
-						'flex items-center gap-2 group-hover:text-blue-500 cursor-pointer',
+						'flex items-center gap-2 group-hover:text-blue-500 cursor-pointer hover:text-inherit p-0 transition-all duration-200 ease-in-out',
 						scrolled && 'text-blue-500'
 					)}
+					variant="ghost"
+					onClick={() => router.replace('/')}
 				>
 					<CompassIcon
 						className={cn(
-							'w-9 h-9 stroke-neutral-50 group-hover:stroke-blue-500',
+							'w-9 h-9 stroke-neutral-50 group-hover:stroke-blue-500 transition-all duration-200 ease-in-out',
 							scrolled && 'stroke-blue-500'
 						)}
 					/>
 
 					<span className="text-3xl font-bold tracking-wide font-nuchileda">SKYLINE</span>
-				</Link>
+				</Button>
 
 				<div className="items-center hidden gap-2 tracking-wider sm:flex">
 					{links.map((link, index) => (
