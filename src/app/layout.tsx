@@ -3,6 +3,7 @@ import './globals.css'
 import { instrumentSans, nuchileda } from './fonts'
 
 import Footer from '@/components/footer'
+import { GoogleTagManager } from '@next/third-parties/google'
 import MainHeader from '@/components/main-header'
 import type { Metadata } from 'next'
 
@@ -20,6 +21,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>): React.ReactNode {
 	return (
 		<html lang="en" className={`${instrumentSans.variable} ${nuchileda.variable} antialiased`}>
+			<GoogleTagManager gtmId="GTM-NGSQ475B" />
+
 			<body className="font-instrument-sans bg-gray-50 text-neutral-900">
 				<MainHeader />
 				{children}
