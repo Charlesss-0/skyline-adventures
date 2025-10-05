@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 	title: 'Skyline Adventures',
 	description:
 		'Discover your next adventure with personalized touristic experiences tailored just for you',
+	verification: {
+		google: 'zkagBrTOB5Gf1AY9cA_vWbqZt1QpClKDJ_z4eq4z7hU',
+	},
 }
 
 export default function RootLayout({
